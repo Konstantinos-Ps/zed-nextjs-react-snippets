@@ -1,0 +1,400 @@
+{
+  "Next.js Page Component": {
+    "prefix": "npage",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const $1 = () => {",
+      "  return (",
+      "    <div>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "Next.js page component"
+  },
+  "Next.js API Route": {
+    "prefix": "apiroute",
+    "body": [
+      "export default function handler(req, res) {",
+      "  if (req.method === 'GET') {",
+      "    // Handle GET request",
+      "    res.status(200).json({ message: 'Hello from API!' });",
+      "  } else {",
+      "    res.status(405).end();",
+      "  }",
+      "}"
+    ],
+    "description": "Next.js API route handler"
+  },
+  "Next.js Middleware": {
+    "prefix": "middleware",
+    "body": [
+      "import { NextResponse } from 'next/server';",
+      "",
+      "export function middleware(request) {",
+      "  // Your middleware logic here",
+      "  return NextResponse.next();",
+      "}"
+    ],
+    "description": "Next.js Middleware"
+  },
+  "Next.js getServerSideProps": {
+    "prefix": "gssp",
+    "body": [
+      "export async function getServerSideProps(context) {",
+      "  // Fetch data from external API",
+      "  const res = await fetch('$1');",
+      "  const data = await res.json();",
+      "",
+      "  return {",
+      "    props: {",
+      "      data,",
+      "    },",
+      "  };",
+      "}"
+    ],
+    "description": "Next.js getServerSideProps"
+  },
+  "Next.js getStaticProps": {
+    "prefix": "gsp",
+    "body": [
+      "export async function getStaticProps(context) {",
+      "  // Fetch data from external API",
+      "  const res = await fetch('$1');",
+      "  const data = await res.json();",
+      "",
+      "  return {",
+      "    props: {",
+      "      data,",
+      "    },",
+      "  };",
+      "}"
+    ],
+    "description": "Next.js getStaticProps"
+  },
+  "Next.js getStaticPaths": {
+    "prefix": "gspaths",
+    "body": [
+      "export async function getStaticPaths() {",
+      "  // Fetch data from external API",
+      "  const res = await fetch('$1');",
+      "  const data = await res.json();",
+      "",
+      "  const paths = data.map(item => ({",
+      "    params: { id: item.id.toString() },",
+      "  }));",
+      "",
+      "  return { paths, fallback: false };",
+      "}"
+    ],
+    "description": "Next.js getStaticPaths"
+  },
+  "Next.js Link": {
+    "prefix": "nlink",
+    "body": ["<Link href=\"$1\">", "  <a>$2</a>", "</Link>"],
+    "description": "Next.js Link component"
+  },
+  "Next.js Image": {
+    "prefix": "nimg",
+    "body": [
+      "import Image from 'next/image';",
+      "",
+      "<Image src=\"$1\" alt=\"$2\" width={$3} height={$4} />"
+    ],
+    "description": "Next.js Image component"
+  },
+  "Next.js Layout Component": {
+    "prefix": "nlayout",
+    "body": [
+      "export default function Layout({ children }) {",
+      "  return (",
+      "    <div>",
+      "      {/* Layout content here */}",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js Layout component"
+  },
+  "Next.js Head": {
+    "prefix": "nhead",
+    "body": [
+      "import Head from 'next/head';",
+      "",
+      "<Head>",
+      "  <title>$1</title>",
+      "</Head>"
+    ],
+    "description": "Next.js Head component"
+  },
+  "Next.js API Route (Multiple Methods)": {
+    "prefix": "apiroutemulti",
+    "body": [
+      "export default function handler(req, res) {",
+      "  switch (req.method) {",
+      "    case 'GET':",
+      "      // Handle GET",
+      "      res.status(200).json({ message: 'GET request' });",
+      "      break;",
+      "    case 'POST':",
+      "      // Handle POST",
+      "      res.status(201).json({ message: 'POST request' });",
+      "      break;",
+      "    default:",
+      "      res.status(405).end();",
+      "  }",
+      "}"
+    ],
+    "description": "Next.js API route handler with multiple methods"
+  },
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const $1 = () => {",
+      "  return (",
+      "    <div>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Functional Component"
+  },
+  "Import and Export Different Component": {
+    "prefix": "impcfc",
+    "body": [
+      "import $1 from '@/components/$2';",
+      "",
+      "const $3 = () => {",
+      "  return (",
+      "    <div>",
+      "      <$1 />",
+      "      $4",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default $3;"
+    ],
+    "description": "Import a component and scaffold a different exported functional component"
+  },
+  "Import and Functional Component": {
+    "prefix": "impfc",
+    "body": [
+      "import $1 from '@$2';",
+      "",
+      "const $1 = () => {",
+      "  return (",
+      "    <div>",
+      "      $3",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "Import a component and scaffold a functional component"
+  },
+  "React useState Hook": {
+    "prefix": "us",
+    "body": ["const [$1, set$2] = React.useState($3);"],
+    "description": "React useState Hook"
+  },
+  "React useEffect Hook": {
+    "prefix": "ue",
+    "body": [
+      "React.useEffect(() => {",
+      "  $1",
+      "  return () => {",
+      "    $2",
+      "  };",
+      "}, [$3]);"
+    ],
+    "description": "React useEffect Hook"
+  },
+  "Console Log": {
+    "prefix": "clg",
+    "body": ["console.log($1);"],
+    "description": "Console Log"
+  },
+  "React useRef Hook": {
+    "prefix": "urf",
+    "body": ["const $1 = React.useRef(null);"],
+    "description": "React useRef Hook"
+  },
+  "React useContext Hook": {
+    "prefix": "uctx",
+    "body": ["const $1 = React.useContext($2);"],
+    "description": "React useContext Hook"
+  },
+  "API Fetch Call": {
+    "prefix": "apifetch",
+    "body": [
+      "fetch('$1')",
+      "  .then(response => response.json())",
+      "  .then(data => {",
+      "    console.log(data);",
+      "    $2",
+      "  })",
+      "  .catch(error => {",
+      "    console.error('Error:', error);",
+      "  });"
+    ],
+    "description": "Basic fetch API call"
+  },
+  "React Class Component": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "class $1 extends Component {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      $2",
+      "    };",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $3",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Class Component"
+  },
+  "Async Await API Call": {
+    "prefix": "apifetcha",
+    "body": [
+      "const fetchData = async () => {",
+      "  try {",
+      "    const response = await fetch('$1');",
+      "    const data = await response.json();",
+      "    console.log(data);",
+      "    $2",
+      "  } catch (error) {",
+      "    console.error('Error:', error);",
+      "  }",
+      "};"
+    ],
+    "description": "Async/await fetch API call"
+  },
+  "React PropTypes": {
+    "prefix": "ptypes",
+    "body": ["$1.propTypes = {", "  $2: PropTypes.$3,", "};"],
+    "description": "React PropTypes template"
+  },
+  "React Fragment": {
+    "prefix": "frag",
+    "body": ["<React.Fragment>", "  $1", "</React.Fragment>"],
+    "description": "React Fragment"
+  },
+  "React Fragment Shorthand": {
+    "prefix": "fragsh",
+    "body": ["<>", "  $1", "</>"],
+    "description": "React Fragment Shorthand"
+  },
+  "React Custom Hook": {
+    "prefix": "hook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "function use$1() {",
+      "  const [$2, set$2] = useState($3);",
+      "",
+      "  useEffect(() => {",
+      "    $4",
+      "  }, [$5]);",
+      "",
+      "  return $2;",
+      "}",
+      "",
+      "export default use$1;"
+    ],
+    "description": "React custom hook template"
+  },
+  "Axios Async Await API Call": {
+    "prefix": "axiosa",
+    "body": [
+      "import axios from 'axios';",
+      "",
+      "const fetchData = async () => {",
+      "  try {",
+      "    const response = await axios.get('$1');",
+      "    console.log(response.data);",
+      "    $2",
+      "  } catch (error) {",
+      "    console.error('Error:', error);",
+      "  }",
+      "};"
+    ],
+    "description": "Axios async/await API call"
+  },
+  "Export All": {
+    "prefix": "expall",
+    "body": ["export * from './$1';"],
+    "description": "Export all from a module"
+  },
+  "React Context Template": {
+    "prefix": "context",
+    "body": [
+      "import React, { createContext, useContext, useState } from 'react';",
+      "",
+      "const $1Context = createContext();",
+      "",
+      "export function use$1() {",
+      "  return useContext($1Context);",
+      "}",
+      "",
+      "export function $1Provider({ children }) {",
+      "  const [$2, set$2] = useState($3);",
+      "  return (",
+      "    <$1Context.Provider value={{ $2, set$2 }}>",
+      "      {children}",
+      "    </$1Context.Provider>",
+      "  );",
+      "}"
+    ],
+    "description": "React Context with Provider and Hook"
+  },
+  "React useMemo Hook": {
+    "prefix": "ume",
+    "body": ["const $1 = React.useMemo(() => $2, [$3]);"],
+    "description": "React useMemo Hook"
+  },
+  "React useCallback Hook": {
+    "prefix": "ucb",
+    "body": ["const $1 = React.useCallback(() => {", "  $2", "}, [$3]);"],
+    "description": "React useCallback Hook"
+  },
+  "React useReducer Hook": {
+    "prefix": "ur",
+    "body": [
+      "const initialState = { $1 };",
+      "function reducer(state, action) {",
+      "  switch (action.type) {",
+      "    case '$2':",
+      "      return { ...state, $3 };",
+      "    default:",
+      "      return state;",
+      "  }",
+      "}",
+      "const [state, dispatch] = React.useReducer(reducer, initialState);"
+    ],
+    "description": "React useReducer Hook"
+  }
+}
