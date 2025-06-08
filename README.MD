@@ -25,7 +25,7 @@ Boost your productivity with quick templates for pages, API routes, data fetchin
 
 ## 📝 Usage
 
-- Open a JavaScript or TypeScript file in Zed.
+- Open a JavaScript file in Zed.
 - Type a snippet prefix (e.g., `npage`, `gssp`, `rfc`, `apifetch`, etc.) and press Tab to expand.
 
 ---
