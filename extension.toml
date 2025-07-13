@@ -1,8 +1,8 @@
 id = "nextjs-react-snippets"
 name = "NEXTJS React JavaScript Snippets"
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["Konstantinos Psychogios"]
-description =  "A collection of useful NEXTJS + React + JavaScript snippets to speed up your development."
+description = "A collection of useful NEXTJS + React + JavaScript snippets to speed up your development."
 repository = "https://github.com/Konstantinos-Ps/zed-nextjs-react-snippets"
-snippets = "./snippets/jsx.json"
+snippets = ["./snippets/jsx.json", "./snippets/tsx.json"]
