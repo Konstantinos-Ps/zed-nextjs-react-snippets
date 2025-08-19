@@ -12,6 +12,7 @@ Boost your productivity with quick templates for pages, API routes, data fetchin
 - React functional/class components, hooks, context, PropTypes, and more
 - Async/await and Axios API call templates
 - Fragments, custom hooks, and utility patterns
+- Supports both JSX and TSX!
 
 ---
 
@@ -25,7 +26,7 @@ Boost your productivity with quick templates for pages, API routes, data fetchin
 
 ## 📝 Usage
 
-- Open a JavaScript file in Zed.
+- Open a JavaScript, JSX, or TSX file in Zed.
 - Type a snippet prefix (e.g., `npage`, `gssp`, `rfc`, `apifetch`, etc.) and press Tab to expand.
 
 ---
